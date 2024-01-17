@@ -1,0 +1,13 @@
+env:
+  browser: true
+  es2021: true
+extends: eslint:recommended
+plugins:
+  - import
+parserOptions:
+  sourceType: module
+  allowImportExportEverywhere: true
+  ecmaVersion: latest
+rules:
+  no-console: 0
+  no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }]

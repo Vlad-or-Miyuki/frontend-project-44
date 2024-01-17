@@ -1,3 +1,4 @@
 import { greeting } from '../src/cli.js';
 
-const result = greeting()
+greeting()
+console.log('Answer "yes" if the number is even, otherwise answer "no".')

@@ -40,3 +40,4 @@ if (correctCount === 3) {
 if(win) {
   console.log('Congratulations, ' + name + '!')
 }
+

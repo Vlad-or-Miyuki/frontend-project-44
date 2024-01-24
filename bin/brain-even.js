@@ -1,7 +1,12 @@
 import readlineSync from 'readline-sync';
-import { logic } from '../src/logic.js';
+import { greeting } from '../src/cli.js';
 
-export const random = () => {
+const name = greeting();
+let gameOver = false;
+let win = false;
+let correctCount = 0;
+
+const random = () => {
   if (gameOver) {
     return;
   }
@@ -11,32 +16,26 @@ export const random = () => {
   const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
   const answer = readlineSync.question('Your answer?: ');
 
-  logic(answer,correctAnswer);
+  if (answer.toLowerCase() === correctAnswer) {
+    console.log('Correct!');
+    correctCount += 1
+  } else if (answer != correctAnswer && answer != Number){ 
+   console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
+   console.log(`Let's try again, ${name}!`);
+   gameOver = true;
+  } else {
+    win = true;
+  }
+ }
 
-  random()
+for (let i = 0; i < 3; i += 1) {
+  random();
 }
 
-//начиная с этого фрагмента переместить код в отдельный файл
-//   if (answer.toLowerCase() === correctAnswer) {
-//     console.log('Correct!');
-//     correctCount += 1
-//   } else if (answer != correctAnswer && answer != Number){ 
-//    console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-//    console.log(`Let's try again, ${name}!`);
-//    gameOver = true;
-//   } else {
-//     win = true;
-//   }
-//  }
+if (correctCount === 3) {
+  win = true;
+}
 
-// for (let i = 0; i < 3; i += 1) {
-//   random();
-// }
-
-// if (correctCount === 3) {
-//   win = true;
-// }
-
-// if(win) {
-//   console.log('Congratulations, ' + name + '!')
-// }
+if(win) {
+  console.log('Congratulations, ' + name + '!')
+}

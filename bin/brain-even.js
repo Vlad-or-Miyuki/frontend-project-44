@@ -1,11 +1,5 @@
 import readlineSync from 'readline-sync';
-import { greeting } from '../src/cli.js';
 import { logic } from '../src/logic.js';
-
-const name = greeting();
-let gameOver = false;
-let win = false;
-let correctCount = 0;
 
 export const random = () => {
   if (gameOver) {
@@ -13,20 +7,36 @@ export const random = () => {
   }
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   const randomNumber = Math.floor(Math.random() * 20) + 1;
-  console.log('Question: ' + randomNumber);
+  console.log('Question: ' + randomNumber); 
   const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
   const answer = readlineSync.question('Your answer?: ');
 
+  logic(answer,correctAnswer);
+
+  random()
 }
 
-for (let i = 0; i < 3; i += 1) {
-  random();
-}
+//начиная с этого фрагмента переместить код в отдельный файл
+//   if (answer.toLowerCase() === correctAnswer) {
+//     console.log('Correct!');
+//     correctCount += 1
+//   } else if (answer != correctAnswer && answer != Number){ 
+//    console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
+//    console.log(`Let's try again, ${name}!`);
+//    gameOver = true;
+//   } else {
+//     win = true;
+//   }
+//  }
 
-if (correctCount === 3) {
-  win = true;
-}
+// for (let i = 0; i < 3; i += 1) {
+//   random();
+// }
 
-if(win) {
-  console.log('Congratulations, ' + name + '!')
-}
+// if (correctCount === 3) {
+//   win = true;
+// }
+
+// if(win) {
+//   console.log('Congratulations, ' + name + '!')
+// }

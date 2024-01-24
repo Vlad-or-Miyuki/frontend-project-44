@@ -13,5 +13,8 @@ brain-gcd:
 brain-progression:
 	node bin/brain-progression.js
 
-lint:
+lint-fix:
 	npx eslint . --fix
+
+lint:
+	npx eslint

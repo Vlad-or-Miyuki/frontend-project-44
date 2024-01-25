@@ -2,9 +2,7 @@
   "name": "@hexlet/code",
   "type": "module",
   "dependencies": {
-    "node.js": "^0.0.1-security",
-    "readline": "^1.3.0",
-    "readline-sync": "^1.4.10"
+  "readline-sync": "^1.4.10"
   },
   "bin": {
     "brain-games": "bin/brain-games.js",

@@ -6,7 +6,7 @@ const random = () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   const randomNumber = Math.floor(Math.random() * 20) + 1;
   console.log(`Question: ${randomNumber}`);
-  const isPrime = (randomNumber) => {
+  const isPrime = () => {
     if (randomNumber <= 1) {
       return false;
     }

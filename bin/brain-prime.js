@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { logic } from '../src/logic.js';
+import logic from '../src/logic.js';
 
 const random = () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');

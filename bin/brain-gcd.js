@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { logic } from '../src/logic.js';
+import logic from '../src/logic.js';
 
 function gcd(randomNumberOne, randomNumberTwo) {
   if (randomNumberTwo === 0) {

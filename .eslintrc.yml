@@ -11,5 +11,4 @@ parserOptions:
 rules:
   no-console: 0
   import/extensions: 'off'
-  import/prefer-default-export: 'off'
   no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }]

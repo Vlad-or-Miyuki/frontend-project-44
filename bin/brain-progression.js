@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { logic } from '../src/logic.js';
+import logic from '../src/logic.js';
 
 console.log('What number is missing in the progression?');
 const random = () => {

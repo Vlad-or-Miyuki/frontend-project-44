@@ -5,7 +5,7 @@ import greeting from './cli.js';
 const name = greeting();
 let correctCount = 0;
 
-export const logic = (correctAnswer, answer, random) => {
+const logic = (correctAnswer, answer, random) => {
   if (answer === correctAnswer) {
     console.log('Correct!');
     correctCount += 1;
@@ -23,3 +23,5 @@ export const logic = (correctAnswer, answer, random) => {
 
   random();
 };
+
+export default logic;

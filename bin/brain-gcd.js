@@ -14,7 +14,7 @@ const random = () => {
   const randomNumberOne = Math.floor(Math.random() * 10) + 1;
   const randomNumberTwo = Math.floor(Math.random() * 5) + 1;
 
-  console.log('Question: ', randomNumberOne, randomNumberTwo);
+  console.log('Question:', randomNumberOne, randomNumberTwo);
   const correctAnswer = gcd(randomNumberOne, randomNumberTwo);
   const answer = parseInt(readlineSync.question('Your answer?: '), 10);
 

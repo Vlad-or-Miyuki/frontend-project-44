@@ -4,9 +4,6 @@ import readlineSync from 'readline-sync';
 import logic from '../src/logic.js';
 
 const random = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
   console.log('What is the result of the expression?');
   const randomNumberOne = Math.floor(Math.random() * 10) + 1;
   const randomNumberTwo = Math.floor(Math.random() * 5) + 1;

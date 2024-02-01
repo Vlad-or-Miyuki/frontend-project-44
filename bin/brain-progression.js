@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 import readlineSync from 'readline-sync';
 import logic from '../src/logic.js';
 
@@ -18,7 +19,7 @@ const random = () => {
   const randomIndex = Math.floor(Math.random() * progression.length);
   const correctAnswer = progression[randomIndex];
   progression[randomIndex] = '..';
-  console.log('Question: ', progression);
+  console.log(`Question: ${progression.join(' ')}`);
   const answer = parseInt(readlineSync.question('Your answer?: '), 10);
 
   logic(correctAnswer, answer, random);

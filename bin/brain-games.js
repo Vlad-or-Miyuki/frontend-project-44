@@ -3,11 +3,9 @@ import greeting from '../src/cli.js';
 
 const userName = greeting();
 
-const welcome = (name) => {
+const welcome = () => {
   console.log('Welcome to the Brain Games!');
-  console.log(name);
+  console.log(userName)
 };
-
-welcome(userName);
 
 export default welcome;

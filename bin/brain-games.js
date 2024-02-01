@@ -9,3 +9,5 @@ const welcome = (name) => {
 };
 
 welcome(userName);
+
+export default welcome;

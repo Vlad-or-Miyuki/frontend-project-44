@@ -3,24 +3,24 @@
 import readlineSync from 'readline-sync';
 import logic from '../src/logic.js';
 
+const isPrime = (number) => {
+  if (number <= 1) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(number); i += 1) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
 const random = () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   const randomNumber = Math.floor(Math.random() * 20) + 1;
   console.log(`Question: ${randomNumber}`);
-  const isPrime = () => {
-    if (randomNumber <= 1) {
-      return false;
-    }
-    for (let i = 2; i <= Math.sqrt(randomNumber); i = +1) {
-      if (randomNumber % i === 0) {
-        return false;
-      }
-    }
-    return true;
-  };
   const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
   const answer = readlineSync.question('Your answer?: ');
-
   logic(correctAnswer, answer, random);
 };
 

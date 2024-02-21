@@ -3,12 +3,12 @@
 import readlineSync from 'readline-sync';
 import logic from '../src/logic.js';
 
-function gcd(randomNumberOne, randomNumberTwo) {
+const gcd = (randomNumberOne, randomNumberTwo) => {
   if (randomNumberTwo === 0) {
     return randomNumberOne;
   }
   return gcd(randomNumberTwo, randomNumberOne % randomNumberTwo);
-}
+};
 
 const random = () => {
   console.log('Find the greatest common divisor of given numbers.');
